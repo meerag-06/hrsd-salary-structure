@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enterprise Salary Portal - Variant 4 (BIG Website)</title>
+
+<style>
+/* ================= GLOBAL THEME ================ */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #eef2f7;
+  color: #333;
+}
+
+/* ================= NAVBAR ================ */
+nav {
+  background: #1e2a78;
+  padding: 18px 30px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+nav h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+nav ul li {
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+nav ul li:hover {
+  color: #ffeb3b;
+}
+
+/* ================= HERO SECTION ================ */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1552664730-d307ca884978');
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+.hero h2 {
+  font-size: 38px;
+  font-weight: 700;
+}
+.hero p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* ================= MAIN GRID ================ */
+.container {
+  width: 90%;
+  margin: 40px auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  animation: fadeIn 0.8s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px);} 
+  to { opacity: 1; transform: translateY(0);} 
+}
+
+/* ================= FORM STYLES ================ */
+.row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+input, select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  font-size: 15px;
+  transition: 0.3s;
+}
+input:focus {
+  border-color: #1e2a78;
+  box-shadow: 0 0 8px rgba(30,42,120,0.4);
+  outline: none;
+}
+
+/* ================= BUTTONS ================ */
+.btn {
+  background: #1e2a78;
+  color: white;
+  padding: 14px;
+  border: none;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 17px;
+  margin-top: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #0f1650;
+}
+.secondary {
+  background: #616161;
+}
+.secondary:hover { background: #333; }
+.print { background: #009688; }
+.print:hover { background: #00695c; }
+
+/* ================= PAYSLIP BOX ================ */
+#previewArea {
+  border: 2px dashed #1e2a78;
+  padding: 25px;
+  border-radius: 10px;
+  min-height: 200px;
+  background: #f5f8ff;
+}
+
+/* ================= FOOTER ================ */
+footer {
+  background: #1e2a78;
+  color: white;
+  padding: 18px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* ================= RESPONSIVE ================ */
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+  .hero { height: 200px; }
+  .hero h2 { font-size: 28px; }
+}
+</style>
+</head>
+
+<body>
+
+<!------------------ NAVBAR ------------------>
+<nav>
+  <h1>Enterprise Salary Portal</h1>
+  <ul>
+    <li>Home</li>
+    <li>Employee</li>
+    <li>Salary</li>
+    <li>Reports</li>
+  </ul>
+</nav>
+
+<!------------------ HERO ------------------>
+<div class="hero">
+  <div>
+    <h2>Advanced Salary Structure System</h2>
+    <p>Professional • Modern • HR Grade • Large Scale Website</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="grid">
+
+    <!------------------ FORM CARD ------------------>
+    <section class="card">
+      <h2>Employee Salary Details</h2>
+
+      <div class="row">
+        <label>Employee Name</label>
+        <input id="name" type="text" placeholder="Enter name">
+      </div>
+
+      <div class="row">
+        <label>Designation</label>
+        <input id="role" type="text" placeholder="Enter designation">
+      </div>
+
+      <div class="row">
+        <label>Department</label>
+        <select id="dept">
+          <option>HR</option>
+          <option>Finance</option>
+          <option>Technical</option>
+          <option>Management</option>
+          <option>Operations</option>
+        </select>
+      </div>
+
+      <h3>Salary Inputs</h3>
+
+      <div class="row">
+        <label>Basic Salary (₹)</label>
+        <input id="basic" type="number">
+      </div>
+
+      <div class="row">
+        <label>HRA (₹)</label>
+        <input id="hra" type="number">
+      </div>
+
+      <div class="row">
+        <label>Travel Allowance (₹)</label>
+        <input id="travel" type="number">
+      </div>
+
+      <div class="row">
+        <label>Medical Allowance (₹)</label>
+        <input id="medical" type="number">
+      </div>
+
+      <div class="row">
+        <label>Provident Fund (PF) (₹)</label>
+        <input id="pf" type="number">
+      </div>
+
+      <div class="row">
+        <label>Tax Percentage (%)</label>
+        <input id="tax" type="number">
+      </div>
+
+      <button class="btn" onclick="calculate()">Generate Salary Slip</button>
+      <button class="btn secondary" onclick="clearForm()">Reset Form</button>
+    </section>
+
+    <!------------------ PAYSLIP PREVIEW ------------------>
+    <section class="card">
+      <h2>Payslip Preview</h2>
+
+      <div id="previewArea">
+        <p>Fill the salary form to generate payslip...</p>
+      </div>
+
+      <button class="btn print" onclick="window.print()">Print Payslip</button>
+    </section>
+
+  </div>
+</div>
+
+<footer>
+  © 2025 Enterprise Salary Portal | Designed for HR & Payroll Systems
+</footer>
+
+<script>
+function calculate() {
+  let name = document.getElementById("name").value;
+  let role = document.getElementById("role").value;
+  let dept = document.getElementById("dept").value;
+  let basic = Number(document.getElementById("basic").value);
+  let hra = Number(document.getElementById("hra").value);
+  let travel = Number(document.getElementById("travel").value);
+  let medical = Number(document.getElementById("medical").value);
+  let pf = Number(document.getElementById("pf").value);
+  let tax = Number(document.getElementById("tax").value);
+
+  if (!name || !role || !basic) {
+    alert("Please fill all required fields!");
+    return;
+  }
+
+  let earnings = basic + hra + travel + medical;
+  let taxAmount = (earnings * tax) / 100;
+  let deductions = pf + taxAmount;
+  let net = earnings - deductions;
+
+  document.getElementById("previewArea").innerHTML = `
+    <h2>Employee Payslip</h2>
+    <h3>${name} (${role}) - ${dept} Department</h3>
+    <hr>
+
+    <h3>Total Earnings</h3>
+    <p><b>Basic Salary:</b> ₹${basic}</p>
+    <p><b>HRA:</b> ₹${hra}</p>
+    <p><b>Travel Allowance:</b> ₹${travel}</p>
+    <p><b>Medical Allowance:</b> ₹${medical}</p>
+    <p><b>Total Earnings:</b> <b>₹${earnings}</b></p>
+
+    <hr>
+    <h3>Deductions</h3>
+    <p><b>PF:</b> ₹${pf}</p>
+    <p><b>Tax (${tax}%):</b> ₹${taxAmount}</p>
+    <p><b>Total Deductions:</b> <b>₹${deductions}</b></p>
+
+    <hr>
+    <h2>Net Salary: ₹${net}</h2>
+  `;
+}
+
+function clearForm() {
+  document.querySelectorAll("input").forEach(i => i.value = "");
+  document.getElementById("previewArea").innerHTML = "<p>Fill the salary form to generate payslip...</p>";
+}
+</script>
+
+</body>
+</html>
